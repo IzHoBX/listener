@@ -10,3 +10,8 @@ Open the app, press start, leave your phone in your pocket and just walk into th
 No more embarassing moments of forgetting people's name!
 
 ## Background
+Listener is developed by the zongchou team for NUS Hackathon 2018. 
+
+## Limitations
+Due to time constraint (24hrs), the current version of the listener only extracts name and age using static hotword detection. 
+Also, because we relied on Google voice recognition service, its effectiveness in noisy surroundings is yet to be improved. 
