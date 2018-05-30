@@ -15,3 +15,5 @@ Listener is developed by the zongchou team for NUS Hackathon 2018.
 ## Limitations
 Due to time constraint (24hrs), the current version of the listener only extracts name and age using static hotword detection. 
 Also, because we relied on Google voice recognition service, its effectiveness in noisy surroundings is yet to be improved. 
+
+![alt text](screenshot.jpg)
