@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "99556317196",
+    "firebase_url": "https://hacknroll-networking.firebaseio.com",
+    "project_id": "hacknroll-networking",
+    "storage_bucket": "hacknroll-networking.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:99556317196:android:7f363c59b5be1b25",
+        "android_client_info": {
+          "package_name": "com.zongchou.listener"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "99556317196-e08rq6480t2647hibiujed64fc2g0spm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgAC3fKMxj-ej_HFZTJRQ7ICFu3d1hfDI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

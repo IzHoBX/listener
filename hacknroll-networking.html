@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <title>NUS Mobility Web Application</title>
+        <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    
+    <body>
+        <div>
+            <font style="font-weight:bold">Name: </font><br>
+            <input type="name" id="newName">
+            <br>
+            <font style="font-weight:bold">Age: </font><br>
+            <input type="age" id="newAge">
+            <br><br>
+            <button id="addButton">ADD</button>
+
+            <br><br><br>
+            <button id="showButton">SHOW</button>
+            <br><br>
+            <font id="show"></font>
+            
+        </div>
+            
+
+        <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyB2FiB4_MPoFB_Uefm0XnCCYGcPSVeqpbY",
+            authDomain: "hacknroll-networking.firebaseapp.com",
+            databaseURL: "https://hacknroll-networking.firebaseio.com",
+            projectId: "hacknroll-networking",
+            storageBucket: "hacknroll-networking.appspot.com",
+            messagingSenderId: "99556317196"
+        };
+        firebase.initializeApp(config);
+        </script> 
+
+
+        <script>
+            var ref = firebase.database().ref("User");
+
+            $(document).ready(function(){
+                
+                $("#addButton").click(function(){
+                    var userData = {
+                        Name: $("#newName").val(),
+                        Age: $("#newAge").val()
+                    }
+
+                    var newUserID = ref.push().key
+                    var updates = {}
+                    updates[newUserID] = userData
+
+                    ref.update(updates)
+                });
+
+                $("#showButton").click(function(){
+                    var showText = [];
+                    var userID = [];
+
+                    ref.on('value', function(snapshot) {
+                        snapshot.forEach(function(snapshot) {                   
+                            var toAdd = []
+                            snapshot.forEach(function(snapshot) {
+                                var key = snapshot.key;
+                                var value = snapshot.val();
+                                toAdd.push(key,value);
+                            });        
+                            showText.push(toAdd);
+                        });
+                    });
+
+                    document.getElementById("show").innerText = showText;
+                });
+
+            });
+    
+        </script>
+    </body>
+</html>
